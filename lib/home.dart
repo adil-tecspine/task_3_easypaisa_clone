@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_3_easypaisa_clone/home_drawer.dart';
+import 'package:task_3_easypaisa_clone/last_grid.dart';
 import 'package:task_3_easypaisa_clone/second_cards.dart';
 import 'package:task_3_easypaisa_clone/top_card.dart';
 
@@ -44,14 +45,7 @@ class Home extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 8),
-                          child: Container(
-                            color: Colors.white,
-                            height: 1000,
-                            child: Center(child: Text('Third Card')),
-                          ),
-                        ),
+                        LastGrid(),
                       ],
                     ),
                   ),
