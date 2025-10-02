@@ -29,7 +29,7 @@ class _LastGridState extends State<LastGrid> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 8),
+      padding: const EdgeInsets.fromLTRB(0, 16.0, 0, 16.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,

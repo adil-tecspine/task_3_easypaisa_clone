@@ -14,9 +14,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  static const _pages = [Home(), CashPoints(), Promotions(), MyAccount()];
+  static const _pages = [
+    Home(),
+    CashPoints(),
+    Promotions(),
+    Promotions(),
+    MyAccount(),
+  ];
 
   void _onItemTapped(int index) {
+    if (index == 2) {
+      // Handle the QR code button tap separately if needed
+      return;
+    }
     setState(() {
       _selectedIndex = index;
     });

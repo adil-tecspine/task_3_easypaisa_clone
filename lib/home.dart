@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:task_3_easypaisa_clone/easypaisa_cards_section.dart';
 import 'package:task_3_easypaisa_clone/home_drawer.dart';
 import 'package:task_3_easypaisa_clone/last_grid.dart';
 import 'package:task_3_easypaisa_clone/second_cards.dart';
@@ -17,47 +20,50 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         leading: Builder(
-          builder: (context) => Stack(
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: CircleAvatar(
-                  radius: 20,
-                  foregroundColor: Color.fromRGBO(49, 44, 59, 1),
-                  backgroundColor: Color.fromRGBO(77, 136, 151, 1),
-                  child: Text(
-                    'AB',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+          builder: (context) => GestureDetector(
+            onTap: () => Scaffold.of(context).openDrawer(),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: CircleAvatar(
+                    radius: 20,
+                    foregroundColor: Color.fromRGBO(49, 44, 59, 1),
+                    backgroundColor: Color.fromRGBO(77, 136, 151, 1),
+                    child: Text(
+                      'AB',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-              ),
 
-              Positioned(
-                right: -10,
-                bottom: -8,
-                child: IconButton.filled(
-                  icon: Icon(Icons.menu),
-                  iconSize: 12,
-                  style: ButtonStyle(
-                    minimumSize: WidgetStateProperty.all(Size(15, 15)),
-                    padding: WidgetStateProperty.all(EdgeInsets.all(5)),
-                    backgroundColor: WidgetStateProperty.all(
-                      Color.fromRGBO(49, 44, 59, 1),
+                Positioned(
+                  right: -10,
+                  bottom: -8,
+                  child: IconButton.filled(
+                    icon: Icon(Icons.menu),
+                    iconSize: 12,
+                    style: ButtonStyle(
+                      minimumSize: WidgetStateProperty.all(Size(15, 15)),
+                      padding: WidgetStateProperty.all(EdgeInsets.all(5)),
+                      backgroundColor: WidgetStateProperty.all(
+                        Color.fromRGBO(49, 44, 59, 1),
+                      ),
+                      foregroundColor: WidgetStateProperty.all(Colors.white),
+                      side: WidgetStateProperty.all(
+                        BorderSide(color: Colors.white, width: 1),
+                      ),
                     ),
-                    foregroundColor: WidgetStateProperty.all(Colors.white),
-                    side: WidgetStateProperty.all(
-                      BorderSide(color: Colors.white, width: 1),
-                    ),
+                    onPressed: () => Scaffold.of(context).openDrawer(),
                   ),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
                 ),
-              ),
-              Positioned(
-                right: 5,
-                bottom: 21,
-                child: Badge(backgroundColor: Colors.red),
-              ),
-            ],
+                Positioned(
+                  right: 5,
+                  bottom: 21,
+                  child: Badge(backgroundColor: Colors.red),
+                ),
+              ],
+            ),
           ),
         ),
         title: Text('Easypaisa'),
@@ -95,6 +101,15 @@ class _HomeState extends State<Home> {
                           textAlign: TextAlign.left,
                         ),
                         LastGrid(),
+                        Text(
+                          'Get your easypaisa card',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        EasypaisaCardsSection(),
                       ],
                     ),
                   ),
