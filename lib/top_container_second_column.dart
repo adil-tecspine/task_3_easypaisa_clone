@@ -25,7 +25,7 @@ class TopContainerSecondColumn extends StatelessWidget {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(255, 0, 187, 89),
-            minimumSize: Size(120, 40),
+            minimumSize: Size(120, 30),
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
