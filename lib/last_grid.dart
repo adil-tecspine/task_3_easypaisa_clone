@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:task_3_easypaisa_clone/third_section_grid_card.dart';
 
-class LastGrid extends StatelessWidget {
+class LastGrid extends StatefulWidget {
   const LastGrid({super.key});
+
+  @override
+  State<LastGrid> createState() => _LastGridState();
+}
+
+class _LastGridState extends State<LastGrid> {
+  late PageController _pageController;
+  int _currentPage = 0;
+
+  static const _pages = [FirstGrid(), SecondGrid()];
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(); // Adjust as needed
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,40 +42,37 @@ class LastGrid extends StatelessWidget {
           ],
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
-        child: GridView.count(
-          crossAxisCount: 4,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-          childAspectRatio: 1,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.all(16),
+        child: Column(
           children: [
-            ThirdSectionGridCard(title: 'Easyload', icon: Icons.phone_android),
-            ThirdSectionGridCard(
-              title: 'Easycash Loan',
-              icon: Icons.monetization_on,
+            SizedBox(
+              height: 300,
+              child: PageView.builder(
+                controller: _pageController,
+                itemCount: 2,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                itemBuilder: (context, index) => _pages[index],
+              ),
             ),
-            ThirdSectionGridCard(title: 'Saving Pocket', icon: Icons.savings),
-            ThirdSectionGridCard(title: 'Invite & Earn', icon: Icons.group_add),
-            ThirdSectionGridCard(title: 'Raast Payment', icon: Icons.send),
-            ThirdSectionGridCard(title: 'Mini App', icon: Icons.apps),
-            ThirdSectionGridCard(title: 'Savings', icon: Icons.account_balance),
-            ThirdSectionGridCard(
-              title: 'Buy Now Pay Later',
-              icon: Icons.shopping_bag,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(_pages.length, (index) {
+                return Container(
+                  width: index == _currentPage ? 8.0 : 6.0,
+                  height: 8.0,
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _currentPage == index
+                        ? const Color.fromRGBO(0, 187, 89, 1)
+                        : Colors.grey,
+                  ),
+                );
+              }),
             ),
-            // Insurance
-            ThirdSectionGridCard(title: 'Bill Pay', icon: Icons.receipt),
-            // Donations
-            ThirdSectionGridCard(
-              title: 'Donations',
-              icon: Icons.volunteer_activism,
-            ),
-            ThirdSectionGridCard(title: 'Games', icon: Icons.videogame_asset),
-            ThirdSectionGridCard(title: 'More', icon: Icons.more_horiz),
-            // Rs.l Game
-            // See All
           ],
         ),
       ),
@@ -60,28 +80,85 @@ class LastGrid extends StatelessWidget {
   }
 }
 
-class ThirdSectionGridCard extends StatelessWidget {
-  const ThirdSectionGridCard({
-    super.key,
-    required this.title,
-    required this.icon,
-  });
-  final String title;
-  final IconData icon;
+class FirstGrid extends StatelessWidget {
+  const FirstGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
+    return GridView.count(
+      crossAxisCount: 4,
+      crossAxisSpacing: 8,
+      mainAxisSpacing: 8,
+      childAspectRatio: 1,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.all(16),
       children: [
-        Icon(icon, color: Color.fromRGBO(0, 187, 89, 1)),
-        SizedBox(height: 8),
-        Text(
-          title,
-          style: TextStyle(fontSize: 12),
-          textAlign: TextAlign.center,
+        ThirdSectionGridCard(title: 'Easyload', icon: Icons.phone_android),
+        ThirdSectionGridCard(
+          title: 'Easycash Loan',
+          icon: Icons.monetization_on,
         ),
+        ThirdSectionGridCard(title: 'Saving Pocket', icon: Icons.savings),
+        ThirdSectionGridCard(title: 'Invite & Earn', icon: Icons.group_add),
+        ThirdSectionGridCard(title: 'Raast Payment', icon: Icons.send),
+        ThirdSectionGridCard(title: 'Mini App', icon: Icons.apps),
+        ThirdSectionGridCard(title: 'Savings', icon: Icons.account_balance),
+        ThirdSectionGridCard(
+          title: 'Buy Now Pay Later',
+          icon: Icons.shopping_bag,
+        ),
+
+        ThirdSectionGridCard(title: 'Bill Pay', icon: Icons.receipt),
+
+        ThirdSectionGridCard(
+          title: 'Donations',
+          icon: Icons.volunteer_activism,
+        ),
+        ThirdSectionGridCard(title: 'Games', icon: Icons.videogame_asset),
+        ThirdSectionGridCard(title: 'More', icon: Icons.more_horiz),
+      ],
+    );
+  }
+}
+
+class SecondGrid extends StatelessWidget {
+  const SecondGrid({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 4,
+      crossAxisSpacing: 8,
+      mainAxisSpacing: 8,
+      childAspectRatio: 1,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.all(16),
+      children: [
+        ThirdSectionGridCard(title: 'Easyload', icon: Icons.phone_android),
+        ThirdSectionGridCard(
+          title: 'Easycash Loan',
+          icon: Icons.monetization_on,
+        ),
+        ThirdSectionGridCard(title: 'Saving Pocket', icon: Icons.savings),
+        ThirdSectionGridCard(title: 'Invite & Earn', icon: Icons.group_add),
+        ThirdSectionGridCard(title: 'Raast Payment', icon: Icons.send),
+        ThirdSectionGridCard(title: 'Mini App', icon: Icons.apps),
+        ThirdSectionGridCard(title: 'Savings', icon: Icons.account_balance),
+        ThirdSectionGridCard(
+          title: 'Buy Now Pay Later',
+          icon: Icons.shopping_bag,
+        ),
+
+        ThirdSectionGridCard(title: 'Bill Pay', icon: Icons.receipt),
+
+        ThirdSectionGridCard(
+          title: 'Donations',
+          icon: Icons.volunteer_activism,
+        ),
+        ThirdSectionGridCard(title: 'Games', icon: Icons.videogame_asset),
+        ThirdSectionGridCard(title: 'More', icon: Icons.more_horiz),
       ],
     );
   }

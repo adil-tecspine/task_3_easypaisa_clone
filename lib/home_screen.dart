@@ -26,24 +26,55 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
+        selectedFontSize: 12,
         selectedItemColor: const Color.fromARGB(255, 1, 189, 94),
         type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.location_on),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+            activeIcon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.location_on_outlined),
             label: 'Cash Points',
+            activeIcon: Icon(Icons.location_on),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_offer),
+            icon: IconButton.filled(
+              onPressed: () {},
+              visualDensity: VisualDensity.compact,
+
+              icon: Icon(Icons.qr_code),
+              style: ButtonStyle(
+                minimumSize: WidgetStateProperty.all(Size(40, 40)),
+                padding: WidgetStateProperty.all(EdgeInsets.all(5)),
+                shape: WidgetStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                backgroundColor: WidgetStateProperty.all(
+                  Color.fromARGB(255, 1, 189, 94),
+                ),
+                foregroundColor: WidgetStateProperty.all(Colors.white),
+              ),
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_offer_outlined),
             label: 'Promotions',
+            activeIcon: Icon(Icons.local_offer),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person_outline),
             label: 'My Account',
+            activeIcon: Icon(Icons.person),
           ),
         ],
       ),

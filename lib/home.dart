@@ -16,8 +16,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Need a stack with circel avatar and name initials written in it , and above it menu icon and clicking on this cauese to open the drawer
-        // onPressed: () => Scaffold.of(context).openDrawer(),
         leading: Builder(
           builder: (context) => Stack(
             children: [
@@ -25,34 +23,39 @@ class _HomeState extends State<Home> {
                 alignment: Alignment.center,
                 child: CircleAvatar(
                   radius: 20,
-                  foregroundColor: Color.fromARGB(255, 0, 187, 89),
-                  backgroundColor: Colors.white,
+                  foregroundColor: Color.fromRGBO(49, 44, 59, 1),
+                  backgroundColor: Color.fromRGBO(77, 136, 151, 1),
                   child: Text(
                     'AB',
-                    style: TextStyle(
-                      // color: Color.fromARGB(255, 38, 165, 88),
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
 
               Positioned(
                 right: -10,
-                bottom: -10,
+                bottom: -8,
                 child: IconButton.filled(
                   icon: Icon(Icons.menu),
-                  iconSize: 10,
+                  iconSize: 12,
                   style: ButtonStyle(
                     minimumSize: WidgetStateProperty.all(Size(15, 15)),
                     padding: WidgetStateProperty.all(EdgeInsets.all(5)),
                     backgroundColor: WidgetStateProperty.all(
-                      Color.fromARGB(255, 0, 187, 89),
+                      Color.fromRGBO(49, 44, 59, 1),
                     ),
                     foregroundColor: WidgetStateProperty.all(Colors.white),
+                    side: WidgetStateProperty.all(
+                      BorderSide(color: Colors.white, width: 1),
+                    ),
                   ),
                   onPressed: () => Scaffold.of(context).openDrawer(),
                 ),
+              ),
+              Positioned(
+                right: 5,
+                bottom: 21,
+                child: Badge(backgroundColor: Colors.red),
               ),
             ],
           ),
