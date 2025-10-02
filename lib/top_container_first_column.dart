@@ -10,7 +10,7 @@ class TopContainerFirstColumn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Easypaisa',
+          'Easypaisy',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Column(
@@ -19,7 +19,10 @@ class TopContainerFirstColumn extends StatelessWidget {
         ),
         Row(
           spacing: 4,
-          children: [Icon(Icons.refresh, size: 16), Text('Updated Just Now')],
+          children: [
+            Icon(Icons.refresh, size: 16),
+            FittedBox(child: Text('Updated Just Now')),
+          ],
         ),
       ],
     );

@@ -15,8 +15,8 @@ class SecondSectionCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SizedBox(
-            width: 80.0,
             height: 80.0,
+            width: 80.0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -24,7 +24,8 @@ class SecondSectionCard extends StatelessWidget {
                 SizedBox(height: 10.0),
                 Text(
                   text,
-                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 12.0),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),

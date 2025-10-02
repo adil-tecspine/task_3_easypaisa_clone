@@ -48,6 +48,7 @@ class _LastGridState extends State<LastGrid> {
               height: 300,
               child: PageView.builder(
                 controller: _pageController,
+
                 itemCount: 2,
                 onPageChanged: (index) {
                   setState(() {

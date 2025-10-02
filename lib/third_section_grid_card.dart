@@ -17,10 +17,12 @@ class ThirdSectionGridCard extends StatelessWidget {
       children: [
         Icon(icon, color: Color.fromRGBO(0, 187, 89, 1)),
         SizedBox(height: 8),
-        Text(
-          title,
-          style: TextStyle(fontSize: 12),
-          textAlign: TextAlign.center,
+        FittedBox(
+          child: Text(
+            title,
+            style: TextStyle(fontSize: 12),
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

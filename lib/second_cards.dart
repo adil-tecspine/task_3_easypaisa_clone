@@ -9,11 +9,30 @@ class SecondCards extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        spacing: 20,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SecondSectionCard(text: 'Send Money', icon: Icons.send),
-          SecondSectionCard(text: 'Bill Payments', icon: Icons.receipt),
-          SecondSectionCard(text: 'Mobile Load', icon: Icons.phone_android),
+          Expanded(
+            child: FittedBox(
+              child: SecondSectionCard(text: 'Send Money', icon: Icons.send),
+            ),
+          ),
+          Expanded(
+            child: FittedBox(
+              child: SecondSectionCard(
+                text: 'Bill Payments',
+                icon: Icons.receipt,
+              ),
+            ),
+          ),
+          Expanded(
+            child: FittedBox(
+              child: SecondSectionCard(
+                text: 'Mobile Load',
+                icon: Icons.phone_android,
+              ),
+            ),
+          ),
         ],
       ),
     );
