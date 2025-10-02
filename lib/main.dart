@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_3_easypaisa_clone/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,11 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Easypaisa Clone',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(title: Text('Easypaisa Clone')),
-        body: Center(child: Text('Hello, World!')),
-      ),
+      home: HomeScreen(),
     );
   }
 }
