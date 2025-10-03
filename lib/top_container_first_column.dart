@@ -10,19 +10,21 @@ class TopContainerFirstColumn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Easypaisy',
+          'Easypaisa',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [Text('Available Balance'), AmountWithButton()],
         ),
-        Row(
-          spacing: 4,
-          children: [
-            Icon(Icons.refresh, size: 16),
-            FittedBox(child: Text('Updated Just Now')),
-          ],
+        Expanded(
+          child: Row(
+            spacing: 4,
+            children: [
+              Icon(Icons.refresh, size: 16),
+              FittedBox(child: Text('Updated Just Now')),
+            ],
+          ),
         ),
       ],
     );

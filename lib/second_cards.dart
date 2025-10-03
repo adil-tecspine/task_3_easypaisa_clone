@@ -13,24 +13,18 @@ class SecondCards extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: FittedBox(
-              child: SecondSectionCard(text: 'Send Money', icon: Icons.send),
+            child: SecondSectionCard(text: 'Send Money', icon: Icons.send),
+          ),
+          Expanded(
+            child: SecondSectionCard(
+              text: 'Bill Payments',
+              icon: Icons.receipt,
             ),
           ),
           Expanded(
-            child: FittedBox(
-              child: SecondSectionCard(
-                text: 'Bill Payments',
-                icon: Icons.receipt,
-              ),
-            ),
-          ),
-          Expanded(
-            child: FittedBox(
-              child: SecondSectionCard(
-                text: 'Mobile Load',
-                icon: Icons.phone_android,
-              ),
+            child: SecondSectionCard(
+              text: 'Mobile Load',
+              icon: Icons.phone_android,
             ),
           ),
         ],

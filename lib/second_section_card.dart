@@ -15,17 +15,17 @@ class SecondSectionCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SizedBox(
-            height: 80.0,
-            width: 80.0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(icon, size: 32.0, color: Color.fromARGB(255, 24, 141, 84)),
                 SizedBox(height: 10.0),
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 12.0),
-                  textAlign: TextAlign.center,
+                FittedBox(
+                  child: Text(
+                    text,
+                    style: TextStyle(fontSize: 12.0),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),

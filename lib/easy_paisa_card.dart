@@ -16,6 +16,7 @@ class EasyPaisaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.orientationOf(context);
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
@@ -49,7 +50,12 @@ class EasyPaisaCard extends StatelessWidget {
                 width: double.infinity,
                 child: OutlinedButton.icon(
                   onPressed: () {},
-                  icon: Text(buttonText),
+                  icon: Text(
+                    buttonText,
+                    style: TextStyle(
+                      fontSize: orientation == Orientation.portrait ? 10 : 14,
+                    ),
+                  ),
                   label: Icon(Icons.arrow_forward),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(

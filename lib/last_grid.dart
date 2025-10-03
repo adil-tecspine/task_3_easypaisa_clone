@@ -28,6 +28,7 @@ class _LastGridState extends State<LastGrid> {
 
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.orientationOf(context);
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 16.0, 0, 16.0),
       child: Container(
@@ -43,9 +44,10 @@ class _LastGridState extends State<LastGrid> {
           borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
-              height: 300,
+              height: orientation == Orientation.portrait ? 250 : 210,
               child: PageView.builder(
                 controller: _pageController,
 
@@ -86,8 +88,10 @@ class FirstGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.orientationOf(context);
     return GridView.count(
-      crossAxisCount: 4,
+      // portrait: 4, landscape: 8
+      crossAxisCount: orientation == Orientation.portrait ? 4 : 6,
       crossAxisSpacing: 8,
       mainAxisSpacing: 8,
       childAspectRatio: 1,
@@ -128,8 +132,10 @@ class SecondGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final orientation = MediaQuery.orientationOf(context);
+
     return GridView.count(
-      crossAxisCount: 4,
+      crossAxisCount: orientation == Orientation.portrait ? 4 : 6,
       crossAxisSpacing: 8,
       mainAxisSpacing: 8,
       childAspectRatio: 1,
