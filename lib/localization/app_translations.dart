@@ -13,9 +13,12 @@ class AppTranslations extends Translations {
       LocaleKeys.drawerSettings: 'Settings',
       LocaleKeys.drawerContactUs: 'Contact Us',
       LocaleKeys.drawerLanguage: 'Language',
-
       LocaleKeys.languageEnglish: 'English',
       LocaleKeys.languageUrdu: 'Urdu',
+      LocaleKeys.drawerTheme: 'Theme',
+      LocaleKeys.drawerLight: 'Light',
+      LocaleKeys.drawerDark: 'Dark',
+      LocaleKeys.drawerSystemDefault: 'System Default',
 
       LocaleKeys.navHome: 'Home',
       LocaleKeys.navCashPoints: 'Cash Points',
@@ -67,6 +70,10 @@ class AppTranslations extends Translations {
       LocaleKeys.drawerSettings: 'سیٹنگز',
       LocaleKeys.drawerContactUs: 'ہم سے رابطہ کریں',
       LocaleKeys.drawerLanguage: 'زبان',
+      LocaleKeys.drawerTheme: 'تھیم',
+      LocaleKeys.drawerLight: 'لائٹ',
+      LocaleKeys.drawerDark: 'ڈارک',
+      LocaleKeys.drawerSystemDefault: 'سسٹم ڈیفالٹ',
 
       LocaleKeys.languageEnglish: 'انگریزی',
       LocaleKeys.languageUrdu: 'اردو',

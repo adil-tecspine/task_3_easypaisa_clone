@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_3_easypaisa_clone/controllers/locale_controller.dart';
+import 'package:task_3_easypaisa_clone/controllers/theme_controller.dart';
 import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -16,9 +17,22 @@ class HomeDrawer extends StatelessWidget {
     }
   }
 
+  String _themeLabelKey(String theme) {
+    switch (theme) {
+      case 'light':
+        return LocaleKeys.drawerLight;
+      case 'dark':
+        return LocaleKeys.drawerDark;
+      case 'system':
+      default:
+        return LocaleKeys.drawerSystemDefault;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final localeController = Get.find<LocaleController>();
+    final themeController = Get.find<ThemeController>();
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -29,27 +43,6 @@ class HomeDrawer extends StatelessWidget {
               LocaleKeys.drawerMenu.tr,
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text(LocaleKeys.drawerHome.tr),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text(LocaleKeys.drawerSettings.tr),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.contact_mail),
-            title: Text(LocaleKeys.drawerContactUs.tr),
-            onTap: () {
-              Navigator.pop(context);
-            },
           ),
           Obx(() {
             final currentCode = localeController.currentLanguageCode;
@@ -64,13 +57,48 @@ class HomeDrawer extends StatelessWidget {
                       .map(
                         (code) => DropdownMenuItem(
                           value: code,
-                          child: Text(_languageLabelKey(code).tr),
+                          child: Text(
+                            _languageLabelKey(code).tr,
+                            style: TextStyle(fontSize: 12),
+                          ),
                         ),
                       )
                       .toList(),
                   onChanged: (code) {
                     if (code != null) {
                       localeController.changeLocale(code);
+                    }
+                  },
+                ),
+              ),
+            );
+          }),
+          Obx(() {
+            final currentTheme = themeController.currentThemeMode.value;
+            return ListTile(
+              leading: Icon(Icons.brightness_6),
+              title: Text(LocaleKeys.drawerTheme.tr),
+              subtitle: Text(_themeLabelKey(currentTheme.name).tr),
+              trailing: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  iconSize: 24,
+                  value: currentTheme.name,
+                  items: themeController.themes.keys
+                      .map(
+                        (code) => DropdownMenuItem(
+                          value: code,
+                          child: Text(
+                            _themeLabelKey(
+                              themeController.themes[code]!.name,
+                            ).tr,
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (code) {
+                    if (code != null) {
+                      themeController.toggleTheme();
                     }
                   },
                 ),

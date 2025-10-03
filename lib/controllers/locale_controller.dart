@@ -25,6 +25,15 @@ class LocaleController extends GetxController {
       final savedLocale = supportedLocales[savedCode]!;
       locale.value = savedLocale;
       Get.updateLocale(savedLocale);
+    } else {
+      final deviceLocale = Get.deviceLocale;
+      if (deviceLocale != null &&
+          supportedLocales.values.any(
+            (loc) => loc.languageCode == deviceLocale.languageCode,
+          )) {
+        locale.value = supportedLocales[deviceLocale.languageCode]!;
+        Get.updateLocale(locale.value);
+      }
     }
   }
 

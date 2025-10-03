@@ -9,6 +9,10 @@ class LocaleKeys {
   static const drawerSettings = 'drawer_settings';
   static const drawerContactUs = 'drawer_contact_us';
   static const drawerLanguage = 'drawer_language';
+  static const drawerTheme = 'drawer_theme';
+  static const drawerLight = 'drawer_light';
+  static const drawerDark = 'drawer_dark';
+  static const drawerSystemDefault = 'drawer_system_default';
 
   static const languageEnglish = 'language_english';
   static const languageUrdu = 'language_urdu';
