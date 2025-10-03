@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_3_easypaisa_clone/easypaisa_cards_section.dart';
 import 'package:task_3_easypaisa_clone/home_drawer.dart';
 import 'package:task_3_easypaisa_clone/last_grid.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 import 'package:task_3_easypaisa_clone/second_cards.dart';
 import 'package:task_3_easypaisa_clone/top_card.dart';
 
@@ -64,7 +66,7 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-        title: Text('Easypaisa'),
+        title: Text(LocaleKeys.appTitle.tr),
         centerTitle: true,
         actions: [
           IconButton(icon: Icon(Icons.search), onPressed: () {}),
@@ -91,7 +93,7 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'More with easypaisa',
+                          LocaleKeys.homeMoreWithEasypaisa.tr,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -100,7 +102,7 @@ class _HomeState extends State<Home> {
                         ),
                         LastGrid(),
                         Text(
-                          'Get your easypaisa card',
+                          LocaleKeys.homeGetYourCard.tr,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,

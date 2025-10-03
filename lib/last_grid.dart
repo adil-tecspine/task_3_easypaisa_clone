@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 import 'package:task_3_easypaisa_clone/third_section_grid_card.dart';
 
 class LastGrid extends StatefulWidget {
@@ -99,29 +100,51 @@ class FirstGrid extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.all(16),
       children: [
-        ThirdSectionGridCard(title: 'Easyload', icon: Icons.phone_android),
         ThirdSectionGridCard(
-          title: 'Easycash Loan',
+          title: LocaleKeys.gridEasyload,
+          icon: Icons.phone_android,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridEasycashLoan,
           icon: Icons.monetization_on,
         ),
-        ThirdSectionGridCard(title: 'Saving Pocket', icon: Icons.savings),
-        ThirdSectionGridCard(title: 'Invite & Earn', icon: Icons.group_add),
-        ThirdSectionGridCard(title: 'Raast Payment', icon: Icons.send),
-        ThirdSectionGridCard(title: 'Mini App', icon: Icons.apps),
-        ThirdSectionGridCard(title: 'Savings', icon: Icons.account_balance),
         ThirdSectionGridCard(
-          title: 'Buy Now Pay Later',
+          title: LocaleKeys.gridSavingPocket,
+          icon: Icons.savings,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridInviteEarn,
+          icon: Icons.group_add,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridRaastPayment,
+          icon: Icons.send,
+        ),
+        ThirdSectionGridCard(title: LocaleKeys.gridMiniApp, icon: Icons.apps),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridSavings,
+          icon: Icons.account_balance,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridBuyNowPayLater,
           icon: Icons.shopping_bag,
         ),
-
-        ThirdSectionGridCard(title: 'Bill Pay', icon: Icons.receipt),
-
         ThirdSectionGridCard(
-          title: 'Donations',
+          title: LocaleKeys.gridBillPay,
+          icon: Icons.receipt,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridDonations,
           icon: Icons.volunteer_activism,
         ),
-        ThirdSectionGridCard(title: 'Games', icon: Icons.videogame_asset),
-        ThirdSectionGridCard(title: 'More', icon: Icons.more_horiz),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridGames,
+          icon: Icons.videogame_asset,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridMore,
+          icon: Icons.more_horiz,
+        ),
       ],
     );
   }
@@ -143,29 +166,51 @@ class SecondGrid extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.all(16),
       children: [
-        ThirdSectionGridCard(title: 'Easyload', icon: Icons.phone_android),
         ThirdSectionGridCard(
-          title: 'Easycash Loan',
+          title: LocaleKeys.gridEasyload,
+          icon: Icons.phone_android,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridEasycashLoan,
           icon: Icons.monetization_on,
         ),
-        ThirdSectionGridCard(title: 'Saving Pocket', icon: Icons.savings),
-        ThirdSectionGridCard(title: 'Invite & Earn', icon: Icons.group_add),
-        ThirdSectionGridCard(title: 'Raast Payment', icon: Icons.send),
-        ThirdSectionGridCard(title: 'Mini App', icon: Icons.apps),
-        ThirdSectionGridCard(title: 'Savings', icon: Icons.account_balance),
         ThirdSectionGridCard(
-          title: 'Buy Now Pay Later',
+          title: LocaleKeys.gridSavingPocket,
+          icon: Icons.savings,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridInviteEarn,
+          icon: Icons.group_add,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridRaastPayment,
+          icon: Icons.send,
+        ),
+        ThirdSectionGridCard(title: LocaleKeys.gridMiniApp, icon: Icons.apps),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridSavings,
+          icon: Icons.account_balance,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridBuyNowPayLater,
           icon: Icons.shopping_bag,
         ),
-
-        ThirdSectionGridCard(title: 'Bill Pay', icon: Icons.receipt),
-
         ThirdSectionGridCard(
-          title: 'Donations',
+          title: LocaleKeys.gridBillPay,
+          icon: Icons.receipt,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridDonations,
           icon: Icons.volunteer_activism,
         ),
-        ThirdSectionGridCard(title: 'Games', icon: Icons.videogame_asset),
-        ThirdSectionGridCard(title: 'More', icon: Icons.more_horiz),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridGames,
+          icon: Icons.videogame_asset,
+        ),
+        ThirdSectionGridCard(
+          title: LocaleKeys.gridMore,
+          icon: Icons.more_horiz,
+        ),
       ],
     );
   }

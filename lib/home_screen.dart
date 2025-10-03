@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_3_easypaisa_clone/cash_points.dart';
 import 'package:task_3_easypaisa_clone/home.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 import 'package:task_3_easypaisa_clone/my_account.dart';
 import 'package:task_3_easypaisa_clone/promotions.dart';
 
@@ -46,12 +48,12 @@ class _HomeScreenState extends State<HomeScreen> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            label: LocaleKeys.navHome.tr,
             activeIcon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.location_on_outlined),
-            label: 'Cash Points',
+            label: LocaleKeys.navCashPoints.tr,
             activeIcon: Icon(Icons.location_on),
           ),
           BottomNavigationBarItem(
@@ -78,12 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.local_offer_outlined),
-            label: 'Promotions',
+            label: LocaleKeys.navPromotions.tr,
             activeIcon: Icon(Icons.local_offer),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            label: 'My Account',
+            label: LocaleKeys.navMyAccount.tr,
             activeIcon: Icon(Icons.person),
           ),
         ],

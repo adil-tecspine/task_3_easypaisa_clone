@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 
 class TopContainerFirstColumn extends StatelessWidget {
   const TopContainerFirstColumn({super.key});
@@ -10,19 +12,22 @@ class TopContainerFirstColumn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Easypaisa',
+          LocaleKeys.appTitle.tr,
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [Text('Available Balance'), AmountWithButton()],
+          children: [
+            Text(LocaleKeys.topAvailableBalance.tr),
+            AmountWithButton(),
+          ],
         ),
         Expanded(
           child: Row(
             spacing: 4,
             children: [
               Icon(Icons.refresh, size: 16),
-              FittedBox(child: Text('Updated Just Now')),
+              FittedBox(child: Text(LocaleKeys.topUpdatedJustNow.tr)),
             ],
           ),
         ),
@@ -53,8 +58,11 @@ class _AmountWithButtonState extends State<AmountWithButton> {
       spacing: 4,
       children: [
         Text(
-          isVisible ? 'Rs. 10,000' : '****',
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
+          isVisible ? LocaleKeys.topSampleBalance.tr : '****',
+          style: TextStyle(
+            fontSize: isVisible ? 15 : 28,
+            fontWeight: FontWeight.w900,
+          ),
         ),
         ElevatedButton.icon(
           onPressed: toggleVisibility,

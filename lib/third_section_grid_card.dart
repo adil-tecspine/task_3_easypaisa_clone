@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ThirdSectionGridCard extends StatelessWidget {
   const ThirdSectionGridCard({
@@ -19,7 +20,7 @@ class ThirdSectionGridCard extends StatelessWidget {
         SizedBox(height: 8),
         FittedBox(
           child: Text(
-            title,
+            title.tr,
             style: TextStyle(fontSize: 12),
             textAlign: TextAlign.center,
           ),

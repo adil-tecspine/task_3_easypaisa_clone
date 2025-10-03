@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SecondSectionCard extends StatelessWidget {
-  const SecondSectionCard({super.key, required this.text, required this.icon});
-  final String text;
+  const SecondSectionCard({
+    super.key,
+    required this.textKey,
+    required this.icon,
+  });
+  final String textKey;
   final IconData icon;
 
   @override
@@ -22,7 +27,7 @@ class SecondSectionCard extends StatelessWidget {
                 SizedBox(height: 10.0),
                 FittedBox(
                   child: Text(
-                    text,
+                    textKey.tr,
                     style: TextStyle(fontSize: 12.0),
                     textAlign: TextAlign.center,
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 import 'package:task_3_easypaisa_clone/second_section_card.dart';
 
 class SecondCards extends StatelessWidget {
@@ -13,17 +14,20 @@ class SecondCards extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: SecondSectionCard(text: 'Send Money', icon: Icons.send),
+            child: SecondSectionCard(
+              textKey: LocaleKeys.secondSendMoney,
+              icon: Icons.send,
+            ),
           ),
           Expanded(
             child: SecondSectionCard(
-              text: 'Bill Payments',
+              textKey: LocaleKeys.secondBillPayments,
               icon: Icons.receipt,
             ),
           ),
           Expanded(
             child: SecondSectionCard(
-              text: 'Mobile Load',
+              textKey: LocaleKeys.secondMobileLoad,
               icon: Icons.phone_android,
             ),
           ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 
 class TopContainerSecondColumn extends StatelessWidget {
   const TopContainerSecondColumn({super.key});
@@ -15,7 +17,7 @@ class TopContainerSecondColumn extends StatelessWidget {
           children: [
             Icon(Icons.star, color: Color.fromARGB(255, 254, 206, 0)),
             Text(
-              'My Rewards',
+              LocaleKeys.topMyRewards.tr,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ],
@@ -31,7 +33,7 @@ class TopContainerSecondColumn extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
             ),
           ),
-          child: Text('Add Cash'),
+          child: Text(LocaleKeys.topAddCash.tr),
         ),
       ],
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 
 class MyAccount extends StatelessWidget {
   const MyAccount({super.key});
@@ -6,8 +8,11 @@ class MyAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My Account'), centerTitle: true),
-      body: Center(child: Text('My Account Screen')),
+      appBar: AppBar(
+        title: Text(LocaleKeys.navMyAccount.tr),
+        centerTitle: true,
+      ),
+      body: Center(child: Text(LocaleKeys.screenMyAccount.tr)),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_3_easypaisa_clone/easy_paisa_card.dart';
+import 'package:task_3_easypaisa_clone/localization/locale_keys.dart';
 
 class EasypaisaCardsSection extends StatelessWidget {
   const EasypaisaCardsSection({super.key});
@@ -12,15 +14,15 @@ class EasypaisaCardsSection extends StatelessWidget {
         spacing: 20,
         children: [
           EasyPaisaCard(
-            title: 'Online Card',
-            subtitle: 'Only for online payments in Pakistan',
-            buttonText: 'Manage Cards',
+            title: LocaleKeys.cardOnlineTitle.tr,
+            subtitle: LocaleKeys.cardOnlineSubtitle.tr,
+            buttonText: LocaleKeys.cardManage.tr,
             cardColor: Color.fromRGBO(48, 111, 102, 1),
           ),
           EasyPaisaCard(
-            title: 'Plastic Card',
-            subtitle: 'Use at any ATM or shop in Pakistan',
-            buttonText: 'Manage Cards',
+            title: LocaleKeys.cardPlasticTitle.tr,
+            subtitle: LocaleKeys.cardPlasticSubtitle.tr,
+            buttonText: LocaleKeys.cardManage.tr,
             cardColor: Color.fromRGBO(47, 47, 57, 1),
           ),
         ],
